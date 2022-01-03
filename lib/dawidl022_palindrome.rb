@@ -2,13 +2,13 @@
 
 require_relative "dawidl022_palindrome/version"
 
-class String
+module Palindrome
   def palindrome?
     processed_content == processed_content.reverse
   end
 
   def letters
-    gsub(/\P{L}/, '')
+    to_s.gsub(/[^\p{L}0-9]/, '')
   end
 
   private
@@ -16,4 +16,12 @@ class String
   def processed_content
     letters.downcase
   end
+end
+
+class String
+  include Palindrome
+end
+
+class Integer
+  include Palindrome
 end
