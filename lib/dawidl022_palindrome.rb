@@ -4,7 +4,8 @@ require_relative "dawidl022_palindrome/version"
 
 module Palindrome
   def palindrome?
-    processed_content == processed_content.reverse
+    processed_content == processed_content.reverse \
+    && processed_content.length >= 1
   end
 
   def letters

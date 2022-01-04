@@ -41,4 +41,8 @@ class Dawidl022PalindromeTest < Minitest::Test
   def test_integer_palindrome
     assert 12321.palindrome?
   end
+
+  def test_spaces_not_palindrome
+    refute "   ".palindrome?
+  end
 end
